@@ -1,0 +1,3 @@
+[submodule "public/documentation"]
+	path = public/documentation
+	url = https://github.com/MacGapProject/documentation.git

@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font: 13px 'Lucida Grande';
+  font-weight: 300;
+  overflow: hidden;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  overflow: inherit;
+  box-shadow: inset -1px 0 0 #b8b8b8;
+	background-color: #eee;
+	border-right: 1px solid #b8b8b8;
+}
+
+.app-active #sidebar {
+    background-color: #e6ebf0;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 200px;
+  right: 0;
+  overflow-y: scroll;
+}

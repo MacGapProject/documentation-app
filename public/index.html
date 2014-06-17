@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MacGap</title>
-  <style type="text/css" media="screen">
-    html, body {
-      height: 100%;
-      width: 100%;
-      background: #FFF;
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-      -webkit-user-select: none;
-    }
-
-    h1 {
-      color: #E0E0E0;
-      margin: 18% 0;
-      text-align: center;
-      font-family: helvetica;
-    }
-  </style>
-  
+  <title>MacGap 2 Documentation</title>
 </head>
-<body>
+<body class="app-active">
   
-  <script type="text/javascript" charset="utf-8">
-     
- </script>
+  <script id="appViewTemplate" type="text/template">
+    <h2>App View Template</h2>
+  </script>
+
+  <script id="sidebarCatHeadingTemplate" type="text/template">
+    <h2>sidebarCatHeadingTemplate</h2>
+  </script>
+
+  <script id="sidebarPageItemTemplate" type="text/template">
+    <li><%= title %></li>
+  </script>
+
+  <script id="pageViewTemplate" type="text/template">
+    <h2>Page View Template</h2>
+  </script>
   
-  <h1>MacGap</h1>
+  
+  
+
+  <script type="text/javascript" src="libraries/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="libraries/underscore-min.js"></script>
+  <script type="text/javascript" src="libraries/backbone-min.js"></script>
+  <script type="text/javascript" src="libraries/marked.js"></script>
+
+	<link rel="stylesheet" href="base.css">
+
+  <script type="text/javascript" src="models/page.js"></script>
+  <script type="text/javascript" src="models/state.js"></script>
+  <script type="text/javascript" src="views/sidebarView.js"></script>
+  <script type="text/javascript" src="views/appView.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
 </body>
 </html>
