@@ -5,36 +5,48 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4CBF1C73-5C40-4C29-B7C8-243577564FA8</string>
+	<string>9BB81041-084E-409A-8E0C-32513362DDA5</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MG</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>06BEA11A-D67D-43F6-8D72-8AF524EB6B56</key>
-		<string>https://github.com/rawcreative/MacGap2.git</string>
+		<key>3B383E96-CCA7-4F96-9D55-997BB1D0D119</key>
+		<string>https://github.com/MacGapProject/documentation.git</string>
+		<key>A85C09C8-4A43-4386-9826-82EEC239A316</key>
+		<string>https://github.com/MacGapProject/documentation-app</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MG.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>06BEA11A-D67D-43F6-8D72-8AF524EB6B56</key>
+		<key>3B383E96-CCA7-4F96-9D55-997BB1D0D119</key>
+		<string>../../public/documentation</string>
+		<key>A85C09C8-4A43-4386-9826-82EEC239A316</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/rawcreative/MacGap2.git</string>
+	<string>https://github.com/MacGapProject/documentation-app</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>06BEA11A-D67D-43F6-8D72-8AF524EB6B56</string>
+	<string>A85C09C8-4A43-4386-9826-82EEC239A316</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>06BEA11A-D67D-43F6-8D72-8AF524EB6B56</string>
+			<string>3B383E96-CCA7-4F96-9D55-997BB1D0D119</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MG</string>
+			<string>documentation</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A85C09C8-4A43-4386-9826-82EEC239A316</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MacGap2-doc-app</string>
 		</dict>
 	</array>
 </dict>
