@@ -1,16 +1,45 @@
 // The Page model is used to hold an individual documentation page.
+
 var Page = Backbone.Model.extend({
 });
 
+
 var Pages = Backbone.Collection.extend({
-  gitRepoPath: 'documentation/_posts',
+  gitBinPath: MacGap.resourcePath + '/bin/git',
+  gitRepoPath: MacGap.libraryPath + '/Application Support/MacGap documentation/repo',
   
   model: Page,
   
   initialize: function() {
     // Read all the documentation pages out of the local GIT repo and create a
     // page model for each one.
-    this.createPageModelsFromRepo();
+    
+    if (this.checkLocalRepoExists()) {
+      // Turn the files into Backbone page models.
+      this.createPageModelsFromRepo();
+    }
+    else {
+      // Pull in the repository, using our app's git binary.
+      this.initialiseRepo({
+        success: this.createPageModelsFromRepo,
+      });
+    }
+  },
+  
+  checkLocalRepoExists: function() {
+  
+    return false;
+  },
+
+  initialiseRepo: function() {
+    MacGap.notify({
+      title: 'gitBinPath',
+      content: 'gitBinPath: ' + this.gitBinPath,
+    });
+    MacGap.notify({
+      title: 'gitRepoPath',
+      content: 'gitRepoPath: ' + this.gitRepoPath,
+    });
   },
   
   createPageModelsFromRepo: function() {

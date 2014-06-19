@@ -3,7 +3,7 @@ var AppView = Backbone.View.extend({
     var self = this;
 
     this.setup_MacGap();
-      
+          
     // Initialise the state model (for preferences and
     // maintaining app state between launches).
     //
