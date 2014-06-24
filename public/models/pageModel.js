@@ -5,7 +5,7 @@ var Page = Backbone.Model.extend({
 
 
 var Pages = Backbone.Collection.extend({
-  gitBinPath: MacGap.resourcePath + '/bin/git',
+  binPath: MacGap.resourcePath + '/public/bin/',
   gitRepoPath: MacGap.libraryPath + '/Application Support/MacGap Documentation/repo',
   
   model: Page,
@@ -13,7 +13,7 @@ var Pages = Backbone.Collection.extend({
   initialize: function() {
     // Read all the documentation pages out of the local GIT repo and create a
     // page model for each one.
-    if (this.checkLocalRepoExists()) {
+    if (MacGap.File.exists(this.gitRepoPath)) {
       // Turn the files into Backbone page models.
       this.createPageModelsFromRepo();
     }
@@ -24,10 +24,6 @@ var Pages = Backbone.Collection.extend({
       });
     }
   },
-  
-  checkLocalRepoExists: function() {
-    return MacGap.File.fileExistsAtPath(this.gitRepoPath);
-  },
 
   initialiseRepo: function() {
     MacGap.notify({
@@ -35,20 +31,26 @@ var Pages = Backbone.Collection.extend({
       content: 'The repository is being pulled to ' + this.gitRepoPath,
     });
     
-//    var gitTask = MacGap.Task.create(this.gitBinPath, this.gitTaskComplete);
+//    var gitTask = MacGap.Task.create('git', this.gitTaskComplete);
 //    gitTask.arguments = ['status'];
-
-    var gitTask = MacGap.Task.create('/bin/sh', this.gitTaskComplete);
-    gitTask.arguments = ['ls'];
+//    gitTask.environment = [this.binPath + ':'];
+    
+    var gitTask = MacGap.Task.create('ls', this.gitTaskComplete);
+    gitTask.arguments = ['/tmp'];
+    gitTask.environment = ['/bin:'];
+        
+    gitTask.pipeOutput = true;
 
     console.log(gitTask);
     gitTask.launch();
-    
   },
   
-  gitTaskComplete: function() {
-    console.log(arguments);
-    alert('git done');
+  gitTaskComplete: function(response) {
+    console.log('status ');
+    console.log(response.status);
+    if (response.status == 0) {
+      console.log(response.stdOut);
+    }
   },
   
   createPageModelsFromRepo: function() {
